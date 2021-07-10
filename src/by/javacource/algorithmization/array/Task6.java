@@ -1,4 +1,4 @@
-package by.javacource.algorithmization.onedimensionalarray;
+package by.javacource.algorithmization.array;
 
 import java.util.*;
 

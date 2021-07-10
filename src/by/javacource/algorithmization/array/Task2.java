@@ -1,43 +1,38 @@
-package by.javacource.algorithmization.onedimensionalarray;
+package by.javacource.algorithmization.array;
 
 import java.util.*;
 
-//Дан массив действительных чисел, размерность которого N.
-//Подсчитать, сколько в нем отрицательных, положительных и нулевых элементов.
+//Дана последовательность действительных чисел a1, a2, ..., an.
+//Заменить все ее члены больше данного Z, этим числом.
+//Посчитать количество замен.
 
-public class Task3 {
+public class Task2 {
 
 	public static void main(String[] args) {
 
 		int n;
+		int z;
 
 		n = consoleInputNaturalNumber("Enter the size of array >> ");
+		z = consoleInputInteger("Enter z >> ");
 
 		double[] arr = new double[n];
 
 		arrayFillingRealNumber(arr);
-
 		printArrayD(arr);
 
-		int countZero = 0;
-		int countPositive = 0;
-		int countNegative = 0;
+		int count = 0;
 
 		for (int i = 0; i < arr.length; i++) {
-
-			if (arr[i] > 0) {
-				countPositive++;
-			} else if (arr[i] == 0) {
-				countZero++;
-			} else {
-				countNegative++;
+			if (arr[i] > z) {
+				arr[i] = z;
+				count = count + 1;
 			}
 		}
 
-		System.out.println("Elements > 0 -> " + countPositive);
-		System.out.println("Elements = 0 -> " + countZero);
-		System.out.println("Elements < 0 -> " + countNegative);
+		printArrayD(arr);
 
+		System.out.println("Made replacements " + count);
 	}
 
 	public static int consoleInputNaturalNumber(String str) {
@@ -45,6 +40,7 @@ public class Task3 {
 		Scanner scan = new Scanner(System.in);
 
 		int number = 0;
+		
 		while (number <= 0) {
 			System.out.print(str);
 			while (!scan.hasNextInt()) {
@@ -53,6 +49,22 @@ public class Task3 {
 			}
 			number = scan.nextInt();
 		}
+		return number;
+	}
+
+	public static int consoleInputInteger(String str) {
+
+		Scanner scan = new Scanner(System.in);
+
+		int number;
+
+		System.out.print(str);
+		while (!scan.hasNextInt()) {
+			scan.next();
+			System.out.print(str);
+		}
+		number = scan.nextInt();
+
 		return number;
 	}
 

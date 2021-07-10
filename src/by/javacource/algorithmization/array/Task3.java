@@ -1,11 +1,11 @@
-package by.javacource.algorithmization.onedimensionalarray;
+package by.javacource.algorithmization.array;
 
 import java.util.*;
 
-//Даны действительные числа a1, a2, ..., an.
-//Поменять местами наибольший и наименьший элементы.
+//Дан массив действительных чисел, размерность которого N.
+//Подсчитать, сколько в нем отрицательных, положительных и нулевых элементов.
 
-public class Task4 {
+public class Task3 {
 
 	public static void main(String[] args) {
 
@@ -17,26 +17,26 @@ public class Task4 {
 
 		arrayFillingRealNumber(arr);
 
-		System.out.println("Before swap >> ");
 		printArrayD(arr);
 
-		int maxIndex = 0;
-		int minIndex = 0;
+		int countZero = 0;
+		int countPositive = 0;
+		int countNegative = 0;
 
-		for (int i = 1; i < arr.length; i++) {
-			
-			if (arr[i] > arr[maxIndex]) {
-				maxIndex = i;
-			}
-			if (arr[i] < arr[minIndex]) {
-				minIndex = i;
+		for (int i = 0; i < arr.length; i++) {
+
+			if (arr[i] > 0) {
+				countPositive++;
+			} else if (arr[i] == 0) {
+				countZero++;
+			} else {
+				countNegative++;
 			}
 		}
 
-		swap(arr, maxIndex, minIndex);
-
-		System.out.println("After swap >> ");
-		printArrayD(arr);
+		System.out.println("Elements > 0 -> " + countPositive);
+		System.out.println("Elements = 0 -> " + countZero);
+		System.out.println("Elements < 0 -> " + countNegative);
 
 	}
 
@@ -71,17 +71,6 @@ public class Task4 {
 		}
 
 		System.out.println();
-		return;
-	}
-
-	public static void swap(double[] mas, int x, int y) {
-
-		double temp;
-
-		temp = mas[x];
-		mas[x] = mas[y];
-		mas[y] = temp;
-
 		return;
 	}
 }
