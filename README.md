@@ -1,9 +1,9 @@
 Задачи 2-ого модуля Algorithmization.  
 Пакеты:  
-onedimensionalarray - содежит задачи по теме "Одномерные массивы".  
-arrayofarrays - содежит задачи по теме "Массивы массивов".  
-sorting - содежит задачи по теме "Одномерные массивы. Сортировки".  
-destructuring - содежит задачи по теме "Декомпозиция с использованием методов (подпрограммы)".  
+src.by.javacource.algorithmization.onedimensionalarray - содежит задачи по теме "Одномерные массивы".  
+src.by.javacource.algorithmization.arrayofarrays - содежит задачи по теме "Массивы массивов".  
+src.by.javacource.algorithmization.sorting - содежит задачи по теме "Одномерные массивы. Сортировки".  
+src.by.javacource.algorithmization.destructuring - содежит задачи по теме "Декомпозиция с использованием методов (подпрограммы)".  
   
 Усливие задачи описано в main для каждой задачи.
  
